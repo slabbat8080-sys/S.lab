@@ -1,0 +1,7 @@
+{
+  "name": "@s.lab8080/s-lab",
+  "version": "1.0.2",
+  "bin": {
+    "s-lab": "./index.js"
+  }
+}
