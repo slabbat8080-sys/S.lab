@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-const { exec } = require("child_process");
+const fs = require("fs");
 const path = require("path");
 
 const batPath = path.join(__dirname, "S.lab.bat");
 
-exec(`"${batPath}"`, (err, stdout) => {
-  if (err) {
-    console.error("Error executing script:", err);
-    return;
-  }
-  console.log(stdout);
-});
+try {
+  const content = fs.readFileSync(batPath, "utf-8");
+  console.log(content);
+} catch (err) {
+  console.error("Error reading script file:", err);
+}
